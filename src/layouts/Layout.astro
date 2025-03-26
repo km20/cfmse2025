@@ -1,0 +1,61 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Conference on Management Science, Finance and AI" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav class="bg-white shadow-md">
+			<div class="max-w-7xl mx-auto px-4 py-3">
+				<ul class="flex space-x-6">
+					<li><a href="/" class="text-gray-700 hover:text-blue-600">Home</a></li>
+					<li><a href="/programme" class="text-gray-700 hover:text-blue-600">Program</a></li>
+					<li><a href="/#themes" class="text-gray-700 hover:text-blue-600">Themes</a></li>
+					<li><a href="/#submission" class="text-gray-700 hover:text-blue-600">Submission</a></li>
+					<li><a href="/#dates" class="text-gray-700 hover:text-blue-600">Important Dates</a></li>
+				</ul>
+			</div>
+		</nav>
+		<slot />
+		<footer class="bg-gray-800 text-white py-8">
+			<div class="max-w-7xl mx-auto px-4">
+				<p class="text-center">© 2024 Management Science, Finance and AI Conference</p>
+			</div>
+		</footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 29, 78, 216;
+		--accent-light: 96, 165, 250;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #ffffff;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	section {
+		padding: 4rem 0;
+	}
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+</style>

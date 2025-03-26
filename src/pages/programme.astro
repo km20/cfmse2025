@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const programme = {
+  day1: [
+    {
+      time: "08:30 - 09:00",
+      title: "Registration and Welcome",
+      location: "Main Hall"
+    },
+    {
+      time: "09:00 - 10:00",
+      title: "Opening Keynote: The Future of Quantitative Finance",
+      speaker: "Prof. Marie Dubois",
+      location: "Auditorium A"
+    },
+    {
+      time: "10:15 - 11:45",
+      title: "Parallel Session 1A: Artificial Intelligence in Finance",
+      speakers: [
+        "Dr. Thomas Martin - 'Deep Learning for Market Prediction'",
+        "Dr. Sophie Lambert - 'NLP Applied to Financial News'",
+        "Prof. Alexander Chen - 'Genetic Algorithms for Portfolio Optimization'"
+      ],
+      location: "Room 101"
+    },
+    {
+      time: "12:00 - 13:30",
+      title: "Lunch and Networking",
+      location: "Conference Restaurant"
+    },
+    {
+      time: "13:45 - 15:15",
+      title: "Parallel Session 1B: Management Science and Decision Making",
+      speakers: [
+        "Prof. Claire Bernard - 'Multi-criteria Optimization in Project Management'",
+        "Dr. Lucas Petit - 'Game Theory Applied to Management'",
+        "Dr. Emma Richard - 'Decision Analysis under Uncertainty'"
+      ],
+      location: "Room 102"
+    },
+    {
+      time: "15:30 - 17:00",
+      title: "Panel Discussion: The Impact of AI on Risk Management",
+      moderator: "Dr. John Smith",
+      location: "Auditorium A"
+    }
+  ],
+  day2: [
+    {
+      time: "09:00 - 10:30",
+      title: "Plenary Session: Innovations in Quantitative Finance",
+      speaker: "Prof. Robert Wilson",
+      location: "Auditorium A"
+    },
+    {
+      time: "10:45 - 12:15",
+      title: "Parallel Session 2A: Advanced Statistics",
+      speakers: [
+        "Dr. Mary Clark - 'Bayesian Methods in Finance'",
+        "Prof. Paul Durant - 'Non-linear Time Series'",
+        "Dr. Sarah Cohen - 'Copulas and Extreme Dependencies'"
+      ],
+      location: "Room 201"
+    },
+    {
+      time: "12:15 - 13:45",
+      title: "Lunch and Poster Sessions",
+      location: "Main Hall"
+    },
+    {
+      time: "14:00 - 15:30",
+      title: "Parallel Session 2B: Risk Management",
+      speakers: [
+        "Prof. Michael White - 'New Approaches to VaR'",
+        "Dr. Julie Martin - 'Machine Learning in Stress Testing'",
+        "Dr. Frank Lewis - 'Systemic Risk and Networks'"
+      ],
+      location: "Room 202"
+    },
+    {
+      time: "15:45 - 16:45",
+      title: "Closing Keynote: Future Perspectives",
+      speaker: "Prof. Catherine Dumas",
+      location: "Auditorium A"
+    },
+    {
+      time: "16:45 - 17:30",
+      title: "Closing Ceremony and Awards",
+      location: "Auditorium A"
+    }
+  ]
+};
+---
+
+<Layout title="Program - Management Science, Finance and AI Conference">
+	<main class="py-8">
+		<div class="container">
+			<h1 class="text-4xl font-bold text-center mb-12">Conference Program</h1>
+
+			<div class="mb-12">
+				<h2 class="text-2xl font-bold mb-6 text-blue-800">Day 1</h2>
+				<div class="space-y-6">
+					{programme.day1.map(session => (
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+								<h3 class="text-xl font-semibold text-blue-600">{session.title}</h3>
+								<span class="text-gray-600 font-medium">{session.time}</span>
+							</div>
+							{session.speaker && (
+								<p class="text-gray-700 mb-2">Speaker: {session.speaker}</p>
+							)}
+							{session.moderator && (
+								<p class="text-gray-700 mb-2">Moderator: {session.moderator}</p>
+							)}
+							{session.speakers && (
+								<div class="mt-2">
+									<p class="font-medium text-gray-700">Presentations:</p>
+									<ul class="list-disc list-inside ml-4 text-gray-600">
+										{session.speakers.map(spk => (
+											<li>{spk}</li>
+										))}
+									</ul>
+								</div>
+							)}
+							<p class="text-gray-500 mt-2">Location: {session.location}</p>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<div>
+				<h2 class="text-2xl font-bold mb-6 text-blue-800">Day 2</h2>
+				<div class="space-y-6">
+					{programme.day2.map(session => (
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+								<h3 class="text-xl font-semibold text-blue-600">{session.title}</h3>
+								<span class="text-gray-600 font-medium">{session.time}</span>
+							</div>
+							{session.speaker && (
+								<p class="text-gray-700 mb-2">Speaker: {session.speaker}</p>
+							)}
+							{session.speakers && (
+								<div class="mt-2">
+									<p class="font-medium text-gray-700">Presentations:</p>
+									<ul class="list-disc list-inside ml-4 text-gray-600">
+										{session.speakers.map(spk => (
+											<li>{spk}</li>
+										))}
+									</ul>
+								</div>
+							)}
+							<p class="text-gray-500 mt-2">Location: {session.location}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>

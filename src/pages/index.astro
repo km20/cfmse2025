@@ -15,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
           First International Conference on Financial Modeling, Statistical
           Analysis And Economic Insights
         </h1>
-        <p class="text-xl text-center max-w-3xl mx-auto">
+        <p class="text-xl text-center max-w-3xl mx-auto mb-8">
           The First edition of this conference is organized by the Tunisian
           Mathematical Society in collaboration with the Laboratory of
           Probability and Statistics at the University of Sfax. This exceptional
@@ -24,8 +24,120 @@ import Layout from "../layouts/Layout.astro";
           fields of management science, finance, risk management, statistics,
           and AI.
         </p>
+        <div class="text-center">
+          <a
+            href="#registration"
+            class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+          >
+            Register Now
+          </a>
+        </div>
       </div>
     </section>
+
+    <section id="speakers" class="bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-12">Conference Speakers</h2>
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          {[
+            { name: "Fathi Abid", affiliation: "University of Sfax, Tunisia" },
+            { name: "Mohamed Ayadi", affiliation: "Brock University, Canada" },
+            { name: "Hatem Ben Ameur", affiliation: "HEC Montréal, Canada" },
+            { name: "Sophie Dabo", affiliation: "University of Lille, France" },
+            { name: "Ahmed Ghorbel", affiliation: "University of Sfax, Tunisia" },
+            { name: "Yecin Jerbi", affiliation: "University of Sfax, Tunisia" },
+            { name: "Skander Lazrak", affiliation: "Brock University, Canada" },
+            { name: "Samir Saadi", affiliation: "Paris Business School, France" },
+          ].sort((a, b) => a.name.localeCompare(b.name)).map((speaker) => (
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+              <h3 class="text-xl font-semibold">{speaker.name}</h3>
+              <p class="text-gray-600">{speaker.affiliation}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold text-center mb-12">Workshop Presenters</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { name: "Afif Masmoudi", affiliation: "University of Sfax, Tunisia" },
+            { name: "Chiraz Karamti", affiliation: "University of Sfax, Tunisia" },
+            { name: "Khalil Masmoudi", affiliation: "University of Sfax, Tunisia" },
+          ].sort((a, b) => a.name.localeCompare(b.name)).map((presenter) => (
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+              <h3 class="text-xl font-semibold">{presenter.name}</h3>
+              <p class="text-gray-600">{presenter.affiliation}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="committees" class="bg-gray-50">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-12">Committees</h2>
+        
+        <div class="max-w-4xl mx-auto grid gap-12">
+          <div>
+            <h3 class="text-2xl font-semibold text-blue-800 mb-6">Scientific Committee</h3>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <ul class="grid md:grid-cols-2 gap-4">
+                {[
+                  "Aida Kammoun - University of Sfax, Tunisia",
+                  "Afif Masmoudi - University of Sfax, Tunisia",
+                  "Ahmed Ghorbel - University of Sfax, Tunisia",
+                  "Chiraz Karamti - University of Sfax, Tunisia",
+                  "Fathi Abid - University of Sfax, Tunisia",
+                  "Hatem Ben Ameur - HEC Montréal, Canada",
+                  "Khalil Masmoudi - University of Sfax, Tunisia",
+                  "Mohamed Ayadi - Brock University, Canada",
+                  "Mouna Boujelben - University of Sfax, Tunisia",
+                  "Mourad Mroua - University of Sfax, Tunisia",
+                  "Najah Attig - Dalhousie University, Canada",
+                  "Samir Saadi - Paris Business School, France",
+                  "Siwar Ellouz - University of Sfax, Tunisia",
+                  "Skander Lazrak - Brock University, Canada",
+                  "Slah Bahloul - University of Sfax, Tunisia",
+                  "Sophie Dabo - University of Lille, France",
+                  "Walid Ben Omrane - Brock University, Canada",
+                  "Walid Khoufi - University of Sfax, Tunisia",
+                  "Yecin Jerbi - University of Sfax, Tunisia",
+                ].sort().map((member) => (
+                  <li>• {member}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold text-blue-800 mb-6">Organizing Committee</h3>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <ul class="grid md:grid-cols-2 gap-4">
+                {[
+                  "Afif Masmoudi - University of Sfax, Tunisia",
+                  "Asma Khadimallah - University of Sfax, Tunisia",
+                  "Fathi Abid - University of Sfax, Tunisia",
+                  "Khalil Masmoudi - University of Sfax, Tunisia",
+                  "Marwa Elleuch - University of Sfax, Tunisia",
+                  "Mohamed Ayadi - Brock University, Canada",
+                  "Mourad Mroua - University of Sfax, Tunisia",
+                  "Nassim Athmouni - University of Gafsa, Tunisia",
+                  "Nawel Ben Amor - University of Sfax, Tunisia",
+                  "Ons Triki - University of Sfax, Tunisia",
+                  "Slah Bahloul - University of Sfax, Tunisia",
+                ].sort().map((member) => (
+                  <li>• {member}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <p class="text-lg">Contact: <a href="mailto:lps.events@outlook.com" class="text-blue-600 hover:text-blue-800">lps.events@outlook.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="themes" class="bg-gray-50">
       <div class="container">
         <h2 class="text-3xl font-bold text-center mb-12">Main Themes</h2>
@@ -59,6 +171,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </section>
+
     <section id="objectives" class="bg-white">
       <div class="container">
         <h2 class="text-3xl font-bold text-center mb-12">Main Activities</h2>
@@ -96,6 +209,38 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
 
+    <section id="registration" class="bg-blue-50">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-12">Registration</h2>
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+          <div class="text-center mb-8">
+            <p class="text-lg text-gray-700 mb-4">
+              Registration fees of 520 Dinars include:
+            </p>
+            <ul class="text-left max-w-2xl mx-auto space-y-2 mb-6">
+              <li>✓ Accommodation in the Hotel (2-nights stay "May 01 - 03, 2025", All Inclusive Soft, double room)</li>
+              <li>✓ Admission to scientific sessions</li>
+              <li>✓ Publication in the conference proceedings</li>
+              <li>✓ All conference materials</li>
+              <li>✓ Coffee breaks</li>
+              <li>✓ Certificate of attendance</li>
+              <li>✓ Welcome package</li>
+            </ul>
+          </div>
+          <div class="mt-8 text-center">
+            <a
+              href="https://forms.office.com/r/Kxr4CBLPXL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Register Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="submission" class="bg-white">
       <div class="container">
         <h2 class="text-3xl font-bold text-center mb-12">Call for Papers</h2>
@@ -106,8 +251,11 @@ import Layout from "../layouts/Layout.astro";
             themes of the conference and will be evaluated by a scientific
             committee.
           </p>
-          <p>
+          <p class="mb-6">
             Selected papers will be published in the conference proceedings.
+          </p>
+          <p class="text-blue-600 font-medium">
+            Full paper or Abstract in pdf format should be sent to <a href="mailto:lps.events@outlook.com" class="underline hover:text-blue-800">lps.events@outlook.com</a>
           </p>
         </div>
       </div>
@@ -129,6 +277,34 @@ import Layout from "../layouts/Layout.astro";
             <h3 class="font-semibold">Final Version Submission</h3>
             <p class="text-blue-600">April 30, 2025</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsors" class="bg-white py-16">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Sponsors</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+          <img
+            src="https://placehold.co/200x100/png?text=Sponsor+1"
+            alt="Sponsor 1"
+            class="max-w-[200px] h-auto"
+          />
+          <img
+            src="https://placehold.co/200x100/png?text=Sponsor+2"
+            alt="Sponsor 2"
+            class="max-w-[200px] h-auto"
+          />
+          <img
+            src="https://placehold.co/200x100/png?text=Sponsor+3"
+            alt="Sponsor 3"
+            class="max-w-[200px] h-auto"
+          />
+          <img
+            src="https://placehold.co/200x100/png?text=Sponsor+4"
+            alt="Sponsor 4"
+            class="max-w-[200px] h-auto"
+          />
         </div>
       </div>
     </section>
